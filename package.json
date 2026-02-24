@@ -1,0 +1,45 @@
+{
+  "name": "seo-max",
+  "version": "2.0.0",
+  "description": "AI-powered SEO intelligence for 15+ coding assistants",
+  "keywords": [
+    "seo",
+    "ai",
+    "claude",
+    "cursor",
+    "copilot",
+    "optimization",
+    "search-engine",
+    "web-vitals",
+    "schema-markup",
+    "content-analysis"
+  ],
+  "author": "Abhinav Dobhal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abhinavdobhal/seo-max.git"
+  },
+  "homepage": "https://seomax.cc",
+  "bugs": {
+    "url": "https://github.com/abhinavdobhal/seo-max/issues"
+  },
+  "private": true,
+  "workspaces": [
+    "cli"
+  ],
+  "scripts": {
+    "build": "cd cli && npm run build",
+    "dev:claude": "npm run sync && cp -r .claude/skills/seo ~/.claude/skills/",
+    "sync": "node scripts/sync-assets.js",
+    "test": "python3 -m pytest tests/",
+    "lint:py": "python3 -m pylint src/seo/scripts/*.py",
+    "lint:ts": "cd cli && npm run lint",
+    "clean": "rm -rf cli/dist cli/assets .claude/skills/seo",
+    "prepare": "npm run sync"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
