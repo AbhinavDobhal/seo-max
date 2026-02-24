@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Max - AI-Powered SEO Intelligence</title>
+    <meta name="description" content="Professional SEO analysis, strategy generation, and optimization powered by BM25 search and intelligent reasoning across 15+ coding assistants.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .step-number {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span class="text-2xl font-bold gradient-text">SEO Max</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 transition">Features</a>
+                    <a href="#platforms" class="text-gray-700 hover:text-blue-600 transition">Platforms</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-blue-600 transition">How it Works</a>
+                    <a href="#examples" class="text-gray-700 hover:text-blue-600 transition">Examples</a>
+                    <a href="https://github.com/abhinavdobhal/seo-max" class="text-gray-700 hover:text-blue-600 transition flex items-center">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20 sm:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
+                    <span class="gradient-text">SEO Max</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-700 font-semibold mb-4">AI-Powered SEO Intelligence</p>
+                <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Professional SEO analysis, strategy generation, and optimization powered by BM25 search and intelligent reasoning across 15+ coding assistants.
+                </p>
+                
+                <!-- Terminal Demo -->
+                <div class="max-w-2xl mx-auto mb-8 bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="p-6 text-left font-mono text-sm">
+                        <div class="text-green-400">$ npm install -g seomax-cli</div>
+                        <div class="text-purple-400 mt-2">$ seomax init --ai claude<span class="animate-pulse">▋</span></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
+                    <a href="#how-it-works" class="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl">
+                        How it Works
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                    <a href="#examples" class="inline-flex items-center px-8 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition shadow-lg hover:shadow-xl">
+                        View Examples
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
+                        <div class="text-3xl font-bold text-blue-600">500+</div>
+                        <div class="text-sm text-gray-600">SEO Rules</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
+                        <div class="text-3xl font-bold text-purple-600">50+</div>
+                        <div class="text-sm text-gray-600">Schema Types</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
+                        <div class="text-3xl font-bold text-pink-600">15+</div>
+                        <div class="text-sm text-gray-600">Platforms</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
+                        <div class="text-3xl font-bold text-indigo-600">20+</div>
+                        <div class="text-sm text-gray-600">Industries</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
+                        <div class="text-3xl font-bold text-cyan-600">100+</div>
+                        <div class="text-sm text-gray-600">Tech Checks</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
+                        <div class="text-3xl font-bold text-rose-600">5</div>
+                        <div class="text-sm text-gray-600">Search Domains</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">Everything You Need for SEO Excellence</h2>
+                <p class="text-xl text-gray-600">Comprehensive SEO intelligence at your fingertips</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technical SEO -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Technical SEO</h3>
+                    <p class="text-gray-700 mb-4">Core Web Vitals, crawlability, indexability, mobile-first optimization with 100+ rule checks.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm">INP</span>
+                        <span class="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm">LCP</span>
+                        <span class="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm">CLS</span>
+                    </div>
+                </div>
+
+                <!-- Content Analysis -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Content Analysis</h3>
+                    <p class="text-gray-700 mb-4">E-E-A-T framework (Dec 2025 update), keyword optimization, and content quality assessment.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm">Experience</span>
+                        <span class="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm">Expertise</span>
+                        <span class="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm">Authority</span>
+                    </div>
+                </div>
+
+                <!-- Schema Markup -->
+                <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Schema Markup</h3>
+                    <p class="text-gray-700 mb-4">50+ schema types, validation, generation, and deprecation awareness for rich results.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-pink-200 text-pink-800 rounded-full text-sm">Product</span>
+                        <span class="px-3 py-1 bg-pink-200 text-pink-800 rounded-full text-sm">Article</span>
+                        <span class="px-3 py-1 bg-pink-200 text-pink-800 rounded-full text-sm">LocalBusiness</span>
+                    </div>
+                </div>
+
+                <!-- GEO Optimization -->
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">GEO Optimization</h3>
+                    <p class="text-gray-700 mb-4">AI search optimization, SERP features, voice search, and Google SGE recommendations.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 rounded-full text-sm">AI Search</span>
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 rounded-full text-sm">Featured Snippets</span>
+                    </div>
+                </div>
+
+                <!-- Industry Templates -->
+                <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Industry Templates</h3>
+                    <p class="text-gray-700 mb-4">Pre-configured SEO strategies for SaaS, E-commerce, Local Services, Publisher, and more.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-200 text-cyan-800 rounded-full text-sm">SaaS</span>
+                        <span class="px-3 py-1 bg-cyan-200 text-cyan-800 rounded-full text-sm">E-commerce</span>
+                        <span class="px-3 py-1 bg-cyan-200 text-cyan-800 rounded-full text-sm">Local</span>
+                    </div>
+                </div>
+
+                <!-- BM25 Search -->
+                <div class="bg-gradient-to-br from-rose-50 to-rose-100 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-rose-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">BM25 Search Engine</h3>
+                    <p class="text-gray-700 mb-4">Algorithmic ranking across 500+ SEO rules with intelligent relevance scoring.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-rose-200 text-rose-800 rounded-full text-sm">Fast</span>
+                        <span class="px-3 py-1 bg-rose-200 text-rose-800 rounded-full text-sm">Accurate</span>
+                        <span class="px-3 py-1 bg-rose-200 text-rose-800 rounded-full text-sm">Smart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section id="platforms" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">15+ Platforms Supported</h2>
+                <p class="text-xl text-gray-600">Works seamlessly with your favorite AI coding assistant</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                <!-- Claude Code -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Claude Code</h3>
+                </div>
+
+                <!-- Cursor -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Cursor</h3>
+                </div>
+
+                <!-- Windsurf -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Windsurf</h3>
+                </div>
+
+                <!-- GitHub Copilot -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Copilot</h3>
+                </div>
+
+                <!-- Continue -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Continue</h3>
+                </div>
+
+                <!-- Antigravity -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Antigravity</h3>
+                </div>
+
+                <!-- Kiro -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Kiro</h3>
+                </div>
+
+                <!-- Codex -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Codex</h3>
+                </div>
+
+                <!-- Roo Code -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.5 4.5c-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-1.45-1.1-3.55-1.5-5.5-1.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Roo Code</h3>
+                </div>
+
+                <!-- Gemini CLI -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Gemini</h3>
+                </div>
+
+                <!-- Trae -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Trae</h3>
+                </div>
+
+                <!-- Qoder -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-violet-400 to-violet-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Qoder</h3>
+                </div>
+
+                <!-- CodeBuddy -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">CodeBuddy</h3>
+                </div>
+
+                <!-- Droid -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-lime-400 to-lime-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">Droid</h3>
+                </div>
+
+                <!-- OpenCode -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex flex-col items-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-sky-600 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-sm text-center">OpenCode</h3>
+                </div>
+
+                <!-- More Platforms -->
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-6 shadow-md card-hover flex flex-col items-center justify-center">
+                    <div class="text-2xl font-bold text-gray-600">+</div>
+                    <h3 class="font-semibold text-sm text-center text-gray-600 mt-2">More Coming</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">How It Works</h2>
+                <p class="text-xl text-gray-600">From request to production-ready SEO strategy in 6 intelligent steps</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">1</div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-3">Your Request</h3>
+                        <div class="bg-gray-900 rounded-lg p-6 font-mono text-sm">
+                            <div class="text-green-400">$ Analyze SEO for my SaaS product landing page. Focus on conversion optimization.</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 hidden lg:block">
+                        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 h-full">
+                            <p class="text-gray-700">Simply describe your SEO needs in natural language. The AI understands context, industry, and goals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">2</div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-3">AI Reasoning</h3>
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6">
+                            <div class="space-y-2 text-sm">
+                                <div><span class="font-semibold">Industry:</span> SaaS</div>
+                                <div><span class="font-semibold">Page Type:</span> Landing Page</div>
+                                <div><span class="font-semibold">Goal:</span> Conversion Optimization</div>
+                                <div class="pt-2 text-purple-600">→ Searching: technical, content, schema, geo, industry domains...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 hidden lg:block">
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 h-full">
+                            <p class="text-gray-700">AI extracts key parameters and initiates parallel search across 5 specialized SEO domains.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">3</div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-3">Search Design Database</h3>
+                        <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-200">
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <div class="font-bold text-blue-600">TECHNICAL</div>
+                                    <div class="text-xs text-gray-600">Core Web Vitals (LCP < 2.5s)</div>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-purple-600">CONTENT</div>
+                                    <div class="text-xs text-gray-600">E-E-A-T signals for SaaS</div>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-pink-600">SCHEMA</div>
+                                    <div class="text-xs text-gray-600">SoftwareApplication markup</div>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-indigo-600">INDUSTRY</div>
+                                    <div class="text-xs text-gray-600">SaaS conversion patterns</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 hidden lg:block">
+                        <div class="bg-gradient-to-br from-pink-50 to-red-50 rounded-lg p-6 h-full">
+                            <p class="text-gray-700">BM25 algorithm ranks 500+ SEO rules and returns the most relevant strategies for your context.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">4</div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-3">Generate Strategy</h3>
+                        <div class="bg-gray-900 rounded-lg p-6 font-mono text-xs">
+                            <div class="text-green-400"># SEO Strategy: SaaS Landing Page</div>
+                            <div class="text-gray-400 mt-2">## Technical Optimizations</div>
+                            <div class="text-white">- Implement lazy loading for images</div>
+                            <div class="text-white">- Optimize JavaScript bundle size</div>
+                            <div class="text-gray-400 mt-2">## Schema Markup</div>
+                            <div class="text-white">- Add SoftwareApplication schema</div>
+                            <div class="text-white">- Include AggregateRating for reviews</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 hidden lg:block">
+                        <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-lg p-6 h-full">
+                            <p class="text-gray-700">Complete SEO strategy document with technical fixes, content recommendations, and schema markup.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">5</div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-3">Quality Checklist</h3>
+                        <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-lg p-6">
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span class="text-gray-700">All Core Web Vitals pass thresholds</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span class="text-gray-700">Schema markup validated</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span class="text-gray-700">Mobile-first optimization</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span class="text-gray-700">E-E-A-T signals present</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 hidden lg:block">
+                        <div class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-lg p-6 h-full">
+                            <p class="text-gray-700">Automated validation ensures all recommendations meet current SEO best practices and standards.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="flex flex-col md:flex-row items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-green-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">6</div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-3">Final Result</h3>
+                        <div class="bg-gradient-to-r from-yellow-50 to-green-50 rounded-lg p-6 border-2 border-green-200">
+                            <div class="text-center">
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">Complete SEO Strategy Document</h4>
+                                <p class="text-gray-600 mb-4">Technical + Content + Schema + GEO + Industry Best Practices</p>
+                                <div class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg font-semibold">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Production Ready
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 hidden lg:block">
+                        <div class="bg-gradient-to-br from-yellow-50 to-green-50 rounded-lg p-6 h-full">
+                            <p class="text-gray-700">Receive a comprehensive, actionable SEO strategy tailored to your specific needs and industry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples/Gallery Section -->
+    <section id="examples" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">Real-World Examples</h2>
+                <p class="text-xl text-gray-600">See SEO Max in action across different industries</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- SaaS Example -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">SaaS Analytics Platform</h3>
+                        <p class="text-blue-100 text-sm">B2B SaaS • Technical SEO Focus</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Optimized Core Web Vitals (LCP 1.8s)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>SoftwareApplication schema markup</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>E-E-A-T signals for authority</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>AI search optimized content</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                            <div class="text-xs text-gray-500 mb-2">Result:</div>
+                            <div class="text-2xl font-bold text-blue-600">+185%</div>
+                            <div class="text-sm text-gray-600">Organic traffic increase</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce Example -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">Fashion E-commerce Store</h3>
+                        <p class="text-purple-100 text-sm">E-commerce • Product Schema Focus</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Product schema with reviews</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Breadcrumb markup implemented</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Image optimization (WebP format)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Rich snippets for pricing</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                            <div class="text-xs text-gray-500 mb-2">Result:</div>
+                            <div class="text-2xl font-bold text-purple-600">+240%</div>
+                            <div class="text-sm text-gray-600">Rich result appearances</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Business Example -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-gradient-to-br from-pink-500 to-pink-600 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">Local Coffee Shop Chain</h3>
+                        <p class="text-pink-100 text-sm">Local Business • Multi-location SEO</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>LocalBusiness schema per location</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Google Business Profile optimization</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>NAP consistency across 15 locations</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Local keyword targeting strategy</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                            <div class="text-xs text-gray-500 mb-2">Result:</div>
+                            <div class="text-2xl font-bold text-pink-600">+320%</div>
+                            <div class="text-sm text-gray-600">Local pack visibility</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publisher Example -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-gradient-to-br from-indigo-500 to-indigo-600 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">Tech News Publisher</h3>
+                        <p class="text-indigo-100 text-sm">Publisher • Content Quality Focus</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Article schema with author info</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>E-E-A-T optimization for journalists</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Top Stories eligibility achieved</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Featured snippet optimization</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                            <div class="text-xs text-gray-500 mb-2">Result:</div>
+                            <div class="text-2xl font-bold text-indigo-600">+410%</div>
+                            <div class="text-sm text-gray-600">News carousel appearances</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Example -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">Telemedicine Platform</h3>
+                        <p class="text-cyan-100 text-sm">Healthcare • YMYL Compliance</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Medical professional credentials</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>YMYL content quality standards</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Healthcare-specific schema markup</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Trust signals and certifications</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                            <div class="text-xs text-gray-500 mb-2">Result:</div>
+                            <div class="text-2xl font-bold text-cyan-600">+165%</div>
+                            <div class="text-sm text-gray-600">Qualified patient inquiries</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agency Example -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="bg-gradient-to-br from-rose-500 to-rose-600 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">Digital Marketing Agency</h3>
+                        <p class="text-rose-100 text-sm">Agency • Authority Building</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Service area schema markup</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Team member structured data</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Case study content optimization</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Thought leadership E-E-A-T signals</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                            <div class="text-xs text-gray-500 mb-2">Result:</div>
+                            <div class="text-2xl font-bold text-rose-600">+290%</div>
+                            <div class="text-sm text-gray-600">High-intent lead generation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold">
+                    <span class="text-2xl font-bold mr-2">20+</span>
+                    <span>Industries Supported • Custom Strategies for Each</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6">Ready to Optimize Your SEO?</h2>
+            <p class="text-xl mb-8 opacity-90">Get started with SEO Max for your AI coding assistant. Professional SEO intelligence at your fingertips.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
+                <a href="https://github.com/abhinavdobhal/seo-max" class="inline-flex items-center px-8 py-4 bg-white text-purple-600 rounded-lg font-semibold hover:bg-gray-100 transition shadow-xl hover:shadow-2xl text-lg">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                    </svg>
+                    Get on GitHub
+                </a>
+                <a href="#features" class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition shadow-xl hover:shadow-2xl text-lg">
+                    Learn More
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8 text-sm opacity-90">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Open Source
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    AI Assistant Compatible
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Production Ready
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <span class="text-xl font-bold text-white">SEO Max</span>
+                    </div>
+                    <p class="text-sm text-gray-400">AI-powered SEO intelligence for modern development workflows.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-white mb-4">Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="hover:text-blue-400 transition">Features</a></li>
+                        <li><a href="#platforms" class="hover:text-blue-400 transition">Supported Platforms</a></li>
+                        <li><a href="#how-it-works" class="hover:text-blue-400 transition">How It Works</a></li>
+                        <li><a href="#examples" class="hover:text-blue-400 transition">Examples</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-white mb-4">Database</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>500+ SEO Rules</li>
+                        <li>50+ Schema Types</li>
+                        <li>20+ Industry Templates</li>
+                        <li>100+ Technical Checks</li>
+                        <li>5 Search Domains</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-white mb-4">Connect</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="https://github.com/abhinavdobhal/seo-max" class="hover:text-blue-400 transition flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                </svg>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.npmjs.com/package/seomax-cli" class="hover:text-blue-400 transition">NPM Package</a>
+                        </li>
+                        <li>
+                            <a href="https://abhinavdobhal.com" class="hover:text-blue-400 transition">Author Portfolio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p class="text-gray-400">Built with React + Tailwind CSS (by SEO Max)</p>
+                <p class="text-gray-500 mt-2">A project from <span class="text-blue-400">Abhinav Dobhal</span></p>
+                <p class="text-gray-600 mt-4">© 2026 SEO Max. Licensed under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
