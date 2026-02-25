@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎯 **SEO strategy generator** with industry-specific recommendations
 - 💾 **Hierarchical persistence** (Master + Overrides pattern)
 - 📊 **CSV knowledge base** with 500+ SEO rules
-- 🛠️ **CLI installer** (`seomax-cli`) for easy deployment
+- 🛠️ **CLI installer** (`seo-max`) for easy deployment
 - 🏭 **Industry templates** for SaaS, E-commerce, Local Services, etc.
 - 🤖 **GEO optimization** for AI search engines
 - ✅ **Security fixes** for path traversal vulnerabilities

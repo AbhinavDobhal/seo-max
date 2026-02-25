@@ -1,7 +1,7 @@
 # SEO Max
 
 <p align="center">
-  <img src="https://img.shields.io/npm/v/seomax-cli?style=for-the-badge&logo=npm&label=CLI" alt="npm">
+  <img src="https://img.shields.io/npm/v/seo-max?style=for-the-badge&logo=npm&label=CLI" alt="npm">
   <img src="https://img.shields.io/badge/platforms-15+-green?style=for-the-badge" alt="15+ Platforms">
   <img src="https://img.shields.io/badge/python-3.8+-yellow?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.8+">
   <img src="https://img.shields.io/github/license/abhinavdobhal/seo-max?style=for-the-badge&color=blue" alt="License">
@@ -91,7 +91,7 @@
 
 ```bash
 # Install CLI globally
-npm install -g seomax-cli
+npm install -g seo-max
 
 # Go to your project
 cd /path/to/your/project
@@ -188,18 +188,18 @@ Generate complete SEO strategies directly:
 
 ```bash
 # Generate SEO strategy with ASCII output
-python3 .claude/skills/seo/scripts/search.py "saas product" --seo-strategy -p "MyApp"
+python3 .claude/skills/seo-max/scripts/search.py "saas product" --seo-strategy -p "MyApp"
 
 # Generate with Markdown output
-python3 .claude/skills/seo/scripts/search.py "ecommerce" --seo-strategy -f markdown
+python3 .claude/skills/seo-max/scripts/search.py "ecommerce" --seo-strategy -f markdown
 
 # Domain-specific search
-python3 .claude/skills/seo/scripts/search.py "core web vitals" --domain technical
-python3 .claude/skills/seo/scripts/search.py "product schema" --domain schema
-python3 .claude/skills/seo/scripts/search.py "eeat signals" --domain content
+python3 .claude/skills/seo-max/scripts/search.py "core web vitals" --domain technical
+python3 .claude/skills/seo-max/scripts/search.py "product schema" --domain schema
+python3 .claude/skills/seo-max/scripts/search.py "eeat signals" --domain content
 
 # Industry-specific search
-python3 .claude/skills/seo/scripts/search.py "saas seo" --industry saas
+python3 .claude/skills/seo-max/scripts/search.py "saas seo" --industry saas
 ```
 
 ### Persist SEO Strategy (Master + Overrides Pattern)
@@ -208,10 +208,10 @@ Save your SEO strategy to files for hierarchical retrieval across sessions:
 
 ```bash
 # Generate and persist to seo-strategy/MASTER.md
-python3 .claude/skills/seo/scripts/search.py "example.com" --seo-strategy --persist -p "MyProject"
+python3 .claude/skills/seo-max/scripts/search.py "example.com" --seo-strategy --persist -p "MyProject"
 
 # Also create a page-specific override file
-python3 .claude/skills/seo/scripts/search.py "blog post" --persist -p "MyProject" --page "blog"
+python3 .claude/skills/seo-max/scripts/search.py "blog post" --persist -p "MyProject" --page "blog"
 ```
 
 This creates a `seo-strategy/` folder structure:
@@ -229,21 +229,21 @@ seo-strategy/
 
 | Platform | Mode | Installation Path |
 |----------|------|-------------------|
-| **Claude Code** | Skill Mode | `~/.claude/skills/seo/` |
-| **Cursor** | Skill Mode | `.cursor/seo/` + `.cursorrules` |
-| **Windsurf** | Skill Mode | `.windsurf/seo/` |
-| **Continue** | Skill Mode | `.continue/skills/seo/` |
-| **Antigravity** | Skill Mode | `.antigravity/seo/` |
-| **Codex CLI** | Skill Mode | `.codex/skills/seo/` |
-| **Gemini CLI** | Skill Mode | `.gemini/skills/seo/` |
-| **OpenCode** | Skill Mode | `.opencode/skills/seo/` |
-| **Qoder** | Skill Mode | `.qoder/skills/seo/` |
-| **CodeBuddy** | Skill Mode | `.codebuddy/skills/seo/` |
-| **Droid (Factory)** | Skill Mode | `.factory/skills/seo/` |
-| **GitHub Copilot** | Workflow Mode | Uses workspace `/seo` command |
+| **Claude Code** | Skill Mode | `~/.claude/skills/seo-max/` |
+| **Cursor** | Skill Mode | `.cursor/seo-max/` + `.cursorrules` |
+| **Windsurf** | Skill Mode | `.windsurf/seo-max/` |
+| **Continue** | Skill Mode | `.continue/skills/seo-max/` |
+| **Antigravity** | Skill Mode | `.antigravity/seo-max/` |
+| **Codex CLI** | Skill Mode | `.codex/skills/seo-max/` |
+| **Gemini CLI** | Skill Mode | `.gemini/skills/seo-max/` |
+| **OpenCode** | Skill Mode | `.opencode/skills/seo-max/` |
+| **Qoder** | Skill Mode | `.qoder/skills/seo-max/` |
+| **CodeBuddy** | Skill Mode | `.codebuddy/skills/seo-max/` |
+| **Droid (Factory)** | Skill Mode | `.factory/skills/seo-max/` |
+| **GitHub Copilot** | Workflow Mode | Uses workspace `/seo-max` command |
 | **Kiro** | Workflow Mode | Uses `/seo-max` command |
 | **Roo Code** | Workflow Mode | Uses `/seo-max` command |
-| **Trae** | Skill Mode (SOLO) | `.trae/skills/seo/` |
+| **Trae** | Skill Mode (SOLO) | `.trae/skills/seo-max/` |
 
 ---
 
