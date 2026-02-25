@@ -31,6 +31,11 @@
   "scripts": {
     "build": "cd cli && npm run build",
     "dev:claude": "npm run sync && cp -r .claude/skills/seo ~/.claude/skills/",
+    "dev:cursor": "npm run sync && cp -r .claude/skills/seo ~/.cursor/rules/",
+    "dev:copilot": "npm run sync && mkdir -p ~/.copilot/skills && cp -r .claude/skills/seo ~/.copilot/skills/",
+    "dev:windsurf": "npm run sync && cp -r .claude/skills/seo ~/.windsurf/skills/",
+    "dev:continue": "npm run sync && cp -r .claude/skills/seo ~/.continue/skills/",
+    "dev:all": "npm run dev:claude && npm run dev:cursor && npm run dev:copilot && npm run dev:windsurf && npm run dev:continue",
     "sync": "node scripts/sync-assets.js",
     "test": "python3 -m pytest tests/",
     "lint:py": "python3 -m pylint src/seo/scripts/*.py",

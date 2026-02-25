@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="https://seomax.cc">Website</a> •
+  <a href="https://abhinavdobhal.github.io/seo-max">Website</a> •
   <a href="#installation">Installation</a> •
   <a href="#features">Features</a> •
   <a href="#usage">Usage</a> •
@@ -275,7 +275,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 Created by **Abhinav Dobhal**
 
-Other projects: [Your Portfolio](https://abhinavdobhal.com)
+Other projects: [Portfolio](https://github.com/AbhinavDobhal)
 
 ---
 

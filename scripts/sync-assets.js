@@ -37,17 +37,21 @@ if (fs.existsSync(srcData)) {
   console.log(`  Copied ${files.length} data files`);
 }
 
-// Copy scripts
+// Copy scripts (skip __pycache__ and .pyc files)
 const srcScripts = path.join(__dirname, '../src/seo/scripts');
 const destScripts = path.join(__dirname, '../.claude/skills/seo/scripts');
 
 if (fs.existsSync(srcScripts)) {
-  const files = fs.readdirSync(srcScripts);
+  const files = fs.readdirSync(srcScripts).filter(file => 
+    !file.startsWith('.') && file !== '__pycache__' && !file.endsWith('.pyc')
+  );
   files.forEach(file => {
-    fs.copyFileSync(
-      path.join(srcScripts, file),
-      path.join(destScripts, file)
-    );
+    const srcFile = path.join(srcScripts, file);
+    const destFile = path.join(destScripts, file);
+    const stat = fs.statSync(srcFile);
+    if (!stat.isDirectory()) {
+      fs.copyFileSync(srcFile, destFile);
+    }
   });
   console.log(`  Copied ${files.length} script files`);
 }
