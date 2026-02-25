@@ -1,0 +1,21 @@
+Category,Weight,Subagent,Checks,Description,Keywords
+Technical SEO,25%,seo-technical,"robots.txt, sitemaps, canonicals, crawlability, indexability, security, core web vitals, javascript rendering, url structure, mobile, structured data",Complete technical SEO analysis across 8 major categories,technical seo audit crawl
+Content Quality,25%,seo-content,"eeat signals, readability, thin content, word count, keyword optimization, freshness, ai citation readiness, author credentials, internal linking, multimedia",E-E-A-T assessment content quality and AI citation readiness,content quality eeat audit
+On-Page SEO,20%,seo-page,"title tags, meta descriptions, h1 headings, heading hierarchy, url structure, internal links, open graph, twitter cards, hreflang, schema markup",On-page elements and metadata optimization,on-page seo audit
+Schema Markup,10%,seo-schema,"schema detection, json-ld validation, microdata, rdfa, deprecated types, required properties, rich snippets, faq restrictions",Structured data validation and generation opportunities,schema markup audit
+Performance,10%,seo-performance,"core web vitals, lcp, inp, cls, render-blocking resources, font loading, image optimization, server response time, caching",Core Web Vitals and performance metrics analysis,performance cwv audit
+Images,5%,seo-images,"alt text, file size, format optimization, dimensions, lazy loading, broken links, image schema",Image SEO optimization and accessibility,image seo audit
+AI Search Readiness,5%,seo-geo,"citability score, brand mentions, ai crawler access, platform signals, llms.txt compliance, ai visibility",Generative engine optimization for AI search platforms,ai search geo visibility
+
+Crawl Configuration,Configuration,crawler,"max pages, robots.txt respect, redirect handling, timeout, concurrency, delay",Internal crawl settings for audit,crawler settings config
+Report Generation,Output,coordinator,"executive summary, prioritized action plan, scoring summary, category breakdown, remediation roadmap",Comprehensive audit reporting structure,audit report generation
+Delegation,Process,coordinator,"parallel subagent delegation, sequential fallback, result aggregation, scoring calculation, output generation",Multi-agent coordination and parallel processing,parallel subagent delegation
+Scoring,Calculation,coordinator,"category weights, tiebreaker logic, issue severity impact, quick wins identification, critical issues flagging",Health score calculation methodology,health score calculation
+
+Technical SEO Details,Category,seo-technical,"robots.txt compliance, xml sitemap presence, noindex accidental, crawl depth, javascript execution, crawl budget",Technical foundation for search engine access,technical foundation crawl
+Content Quality Details,Category,seo-content,"eeat framework, experience signals, expertise signals, authoritativeness, trustworthiness, thin content, duplicates",Content evaluation and quality assessment,content evaluation audit
+On-Page Details,Category,seo-page,"title tags, meta descriptions, h1 tags, heading structure, urls, internal links, open graph, twitter cards",Individual page element optimization,on-page elements audit
+Schema Details,Category,seo-schema,"schema types detected, json-ld format, required properties, deprecated types, rich snippets, generation opportunities",Structured data ecosystem analysis,schema ecosystem audit
+Performance Details,Category,seo-performance,"lcp detection, inp optimization, cls prevention, resource analysis, server performance, caching strategy",Core Web Vitals and performance audit,performance metrics audit
+Image Details,Category,seo-images,"alt text quality, file size optimization, format recommendations, dimensions cls, lazy loading, broken links",Image optimization and accessibility audit,image optimization audit
+AI Readiness Details,Category,seo-geo,"citability assessment, brand mentions tracking, ai crawler access, platform-specific signals, llms.txt setup",Generative engine optimization analysis,ai readiness visibility

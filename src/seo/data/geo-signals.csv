@@ -1,0 +1,45 @@
+Signal Category,Signal,Platform,Description,Weight,Correlation,Keywords
+Citability,Passage Length Optimal,Google AI Overviews ChatGPT Perplexity,Passages 134-167 words are most cited by AI,High,0.85,passage length citability ai
+Citability,Self-Contained Answers,Google AI Overviews ChatGPT Perplexity,Paragraphs can stand alone without page context,High,0.82,self-contained answer snippet
+Citability,Quotable Sentences,Google AI Overviews ChatGPT Perplexity,Include facts statistics step-by-step processes,High,0.80,quotable sentences facts stats
+Citability,Attribution Clear,Google AI Overviews ChatGPT Perplexity,Clear sourcing and author information provided,Medium,0.75,attribution authorship source
+Citability,Date Freshness,ChatGPT,Recent update dates increase citation likelihood,Medium,0.70,date freshness citation
+
+Brand Mentions,YouTube Mentions,ChatGPT Perplexity Google AI,Brand mentioned in YouTube videos transcripts,Critical,0.737,youtube mentions brand
+Brand Mentions,Reddit Mentions,ChatGPT Perplexity,Brand discussed in Reddit threads communities,High,0.68,reddit mentions discussion
+Brand Mentions,Wikipedia Presence,Google AI Overviews Perplexity,Wikipedia article about brand company,High,0.72,wikipedia presence authority
+Brand Mentions,LinkedIn Presence,Perplexity ChatGPT,Company profile LinkedIn articles employee mentions,Medium,0.65,linkedin company profile
+Brand Mentions,General Web Mentions,All Platforms,Brand mentions across all domains web,High,0.70,brand awareness mentions
+Brand Mentions,News Mentions,Google AI Overviews ChatGPT,Brand featured in news articles publications,High,0.75,news mentions brand coverage
+Brand Mentions,Industry Forums,ChatGPT Perplexity,Brand discussed in niche industry communities,Medium,0.62,industry forum mentions
+Brand Mentions,Backlink Volume,All Platforms,Domain authority backlink count,Medium,0.266,backlink domain authority
+
+Crawler Access,GPTBot Allowed,ChatGPT,Allow OpenAI GPTBot for model training,High,0.85,gptbot openai training
+Crawler Access,ChatGPT-User Allowed,ChatGPT,Allow ChatGPT browsing in ChatGPT conversations,High,0.90,chatgpt-user browsing
+Crawler Access,ClaudeBot Allowed,Claude,Allow Anthropic ClaudeBot for model training,High,0.85,claudebot anthropic training
+Crawler Access,PerplexityBot Allowed,Perplexity,Allow Perplexity bot for search and training,High,0.85,perplexitybot perplexity search
+Crawler Access,Bytespider Allowed,ByteDance,Allow ByteDance bot for TikTok training,Medium,0.50,bytespider bytedance training
+Crawler Access,Google-Extended Blocked,Google AI Overviews,Block Google-Extended blocks Gemini only not search,Medium,0.60,google-extended gemini warning
+Crawler Access,Google Search Indexing,Google AI Overviews,Googlebot must crawl for search AI Overviews,Critical,0.95,googlebot search indexing
+Crawler Access,robots.txt Compliance,All Platforms,Robots.txt properly allows AI crawlers,High,0.80,robots.txt ai crawler rules
+
+Platform Signals,Top 10 Organic Results,Google AI Overviews,Appearing in top 10 search positions,High,0.85,top 10 serp ai overviews
+Platform Signals,Content Type Listicles,Google AI Overviews,Listicles how-tos data-rich pages preferred,Medium,0.70,listicle how-to content type
+Platform Signals,Content Type Guides,Google AI Overviews ChatGPT,Comprehensive guides tutorials highly cited,High,0.80,guide tutorial content
+Platform Signals,Structured Data Present,Google AI Overviews,Schema markup required for some types,High,0.85,structured data schema
+Platform Signals,Domain Authority,ChatGPT Perplexity,Site reputation DR authority signals,Medium,0.65,domain authority da
+Platform Signals,Content Recency,ChatGPT,Updated within 6 months preferred by ChatGPT,High,0.75,recent content freshness
+Platform Signals,Academic Rigor,Perplexity,Peer-reviewed cited sources preferred,High,0.78,academic citations sources
+Platform Signals,Author Credentials,Perplexity,Author expertise background important,High,0.80,author credentials expertise
+Platform Signals,Topic Breadth,Perplexity,Comprehensive coverage favored over narrow,Medium,0.68,topic breadth coverage
+Platform Signals,Domain Overlap,Google AI ChatGPT Perplexity,Only 11% overlap between Google and ChatGPT,Critical,0.55,platform overlap citation
+
+llms.txt Compliance,File Location,All Platforms,File at /.well-known/llms.txt,Medium,0.60,llms.txt location
+llms.txt Compliance,Crawler Restrictions,All Platforms,Specify which crawlers have access,Medium,0.65,llms.txt robots restrictions
+llms.txt Compliance,Content Access Control,All Platforms,Declare prohibited content sections,Medium,0.60,llms.txt content control
+llms.txt Compliance,Citation Format,All Platforms,Specify preferred citation format markdown,Medium,0.55,llms.txt citation format
+llms.txt Compliance,Attribution Rules,All Platforms,Define attribution requirements,Medium,0.58,llms.txt attribution
+
+AI-Generated Content,Original Content,All Platforms,Pure AI-generated content penalized,Critical,0.90,ai-generated content penalty
+AI-Generated Content,Human Review,All Platforms,AI content reviewed edited by human,High,0.80,human reviewed ai content
+AI-Generated Content,Unique Value,All Platforms,Added unique data perspective beyond training,High,0.85,unique value original research

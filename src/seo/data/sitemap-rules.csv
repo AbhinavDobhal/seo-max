@@ -1,0 +1,46 @@
+Category,Rule,Check Type,Severity,Description,Keywords
+Validation,XML Format Valid,Validation,Critical,Sitemap must be well-formed valid XML,xml format validation syntax
+Validation,URL Count Limit,Validation,Critical,Maximum 50000 URLs per sitemap file,url count limit 50k
+Validation,All URLs Return 200,Validation,High,HTTP 200 status code for all URLs,http 200 status code broken
+Validation,Lastmod Date Accuracy,Validation,High,lastmod dates are actual not all identical,lastmod date accuracy freshness
+Validation,Deprecated Tags Removed,Validation,Low,priority and changefreq tags ignored by Google,deprecated priority changefreq
+Validation,Sitemap In robots.txt,Validation,Medium,Sitemap referenced in robots.txt file,robots.txt sitemap reference
+Validation,Sitemap Index Format,Validation,Critical,Proper sitemapindex format for >50k URLs,sitemap index format
+
+Structure,Homepage Included,Structure,High,Homepage URL included with priority 1.0,homepage url priority
+Structure,Category Pages Included,Structure,High,Main category pages with priority 0.8,category pages priority
+Structure,Service Product Pages,Structure,High,Service and product pages with priority 0.7,service product pages
+Structure,Blog Content Included,Structure,Medium,Blog posts and content with priority 0.6,blog posts content priority
+Structure,Location Pages,Structure,Medium,Location pages for local business priority 0.7,location pages local
+Structure,Content Type Split,Structure,High,Split sitemaps by type pages posts images,sitemap split content type
+Structure,No Duplicate URLs,Structure,Critical,Each URL appears only once in sitemap,duplicate urls sitemap
+Structure,No Parameters in URLs,Structure,High,Strip query parameters from URLs,parameter handling urls
+Structure,Canonical URL Used,Structure,Critical,Use canonical version not variants,canonical url sitemap
+Structure,HTTPS Only,Structure,High,All URLs use HTTPS not HTTP,https protocol security
+Structure,No Redirects,Structure,High,Do not include URLs that redirect,redirect urls sitemap
+Structure,No Noindex URLs,Structure,Critical,Never include noindexed pages,noindex pages sitemap
+
+Optimization,Sitemap Size Limit,Optimization,Medium,Limit to 50MB per file uncompressed,sitemap file size 50mb
+Optimization,Gzip Compression,Optimization,Medium,Compress large sitemaps with gzip,gzip compression sitemap
+Optimization,Image Sitemap,Optimization,Medium,Separate image sitemap for image URLs,image sitemap xml
+Optimization,Video Sitemap,Optimization,Medium,Video sitemap for video content,video sitemap xml
+Optimization,News Sitemap,Optimization,Low,News sitemap for publisher sites,news sitemap xml
+Optimization,Mobile Sitemap,Optimization,Low,Mobile sitemap if different mobile URLs,mobile sitemap
+
+Quality Gates,Location Pages Warning,Quality Gates,High,Warning at 30+ location pages flag thin content,location pages 30 warning
+Quality Gates,Location Pages Hard Stop,Quality Gates,Critical,Hard stop at 50+ location pages require justification,location pages 50 hard-stop
+Quality Gates,Content Uniqueness,Quality Gates,High,75%+ unique content between generated pages,content uniqueness check
+Quality Gates,Thin Content Detection,Quality Gates,High,Minimum word count enforcement per page type,thin content minimum words
+Quality Gates,Doorway Page Prevention,Quality Gates,Critical,Avoid pure directory pages without unique content,doorway page penalty
+Quality Gates,Keyword Cannibalization,Quality Gates,High,Spread topics across pages prevent competing,keyword cannibalization
+Quality Gates,Internal Linking,Quality Gates,Medium,Proper links between generated pages hierarchy,internal linking structure
+
+Content Safety,Landing Pages Safe,Content Safety,High,Landing pages real unique setup documentation,landing page safe content
+Content Safety,Template Pages Safe,Content Safety,High,Template tool pages downloadable content,template page safe content
+Content Safety,Glossary Pages Safe,Content Safety,High,Glossary pages 200+ word definitions,glossary page safe content
+Content Safety,Product Pages Safe,Content Safety,High,Product pages unique specs reviews ratings,product page safe content
+Content Safety,Profile Pages Safe,Content Safety,High,User profile pages with user-generated content,user profile safe content
+Content Safety,Location Pages Risky,Content Safety,Critical,Location pages only city name swapped high risk,location page city swap risk
+Content Safety,Comparison Pages Risky,Content Safety,Critical,Comparison pages without real data high risk,comparison page risk
+Content Safety,Alternative Pages Risky,Content Safety,Critical,Alternative pages without genuine comparison risky,alternative page risk
+Content Safety,AI Generated Risky,Content Safety,Critical,AI-generated pages without human review risky,ai-generated page penalty

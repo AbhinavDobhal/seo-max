@@ -1,0 +1,78 @@
+Category,Rule,Description,Severity,Weight,Keywords
+On-Page SEO,Title Tag Length,Title must be 50-60 characters,High,8,title tag length optimal seo
+On-Page SEO,Title Keyword,Primary keyword included in title,High,9,title keyword optimization
+On-Page SEO,Title Uniqueness,Each page has unique title,Medium,6,duplicate titles
+On-Page SEO,Meta Description,Meta description 150-160 characters,High,7,meta description length seo
+On-Page SEO,Meta Description Keyword,Primary keyword in meta description,Medium,5,meta description keyword
+On-Page SEO,H1 Count,Exactly one H1 tag per page,Critical,10,h1 tag single page
+On-Page SEO,H1 Keyword,H1 includes primary keyword,High,8,h1 keyword optimization
+On-Page SEO,H1 Intent Match,H1 matches page intent/topic,High,9,h1 page intent
+On-Page SEO,Heading Hierarchy,Logical H1 > H2 > H3 structure no gaps,High,8,heading hierarchy structure
+On-Page SEO,URL Slug,URL is descriptive hyphenated lowercase,Medium,6,url slug format
+On-Page SEO,URL Parameters,Minimize query parameters in URLs,Medium,5,url parameter optimization
+On-Page SEO,Canonical Tag,Self-referencing canonical tag present,Critical,10,canonical tag seo
+On-Page SEO,Internal Links,Sufficient relevant internal links with good anchor text,High,8,internal linking
+On-Page SEO,Orphan Pages,No inaccessible orphan pages,Medium,6,orphan page detection
+On-Page SEO,External Links,Links to authoritative sources present,Medium,5,external linking authority
+
+Content Quality,Word Count Homepage,Homepage minimum 500 words,Medium,6,homepage word count minimum
+Content Quality,Word Count Service,Service pages minimum 800 words,High,8,service page word count
+Content Quality,Word Count Blog,Blog posts minimum 1500 words,High,8,blog post word count
+Content Quality,Word Count Product,Product pages minimum 300-400 words,Medium,6,product page word count
+Content Quality,Word Count Location,Location pages minimum 500-600 words,Medium,6,location page word count
+Content Quality,Readability Score,Flesch Reading Ease score 60-70,Medium,5,readability flesch score
+Content Quality,Grade Level,Grade level matches target audience,Medium,5,reading grade level audience
+Content Quality,Keyword Density,Natural keyword density 1-3 percent,Medium,5,keyword density optimization
+Content Quality,Semantic Variations,LSI keywords and semantic variations present,Medium,6,semantic keyword variation
+Content Quality,Keyword Stuffing,No keyword stuffing detected,Medium,5,keyword stuffing penalty
+Content Quality,Expertise Signals,Author credentials and expertise evident,High,9,author expertise credentials
+Content Quality,Experience Signals,First-hand experience case studies before-after,High,9,first-hand experience signals
+Content Quality,Authoritativeness,External citations backlinks industry recognition,High,8,authority citations backlinks
+Content Quality,Trustworthiness,HTTPS contact info privacy policy reviews,High,8,trust signals https privacy
+Content Quality,Publication Date,Publication date provided and visible,High,7,publication date freshness
+Content Quality,Update Date,Last updated date shown for evergreen content,Medium,6,content update date
+
+Technical Elements,Canonical Tag,Canonical tag present and correct,Critical,10,canonical tag technical
+Technical Elements,Meta Robots,Meta robots follow index unless intentionally no-index,High,8,meta robots index follow
+Technical Elements,Open Graph Title,og:title tag present,Medium,6,open graph title
+Technical Elements,Open Graph Description,og:description tag present,Medium,6,open graph description
+Technical Elements,Open Graph Image,og:image tag present and valid,Medium,6,open graph image
+Technical Elements,Open Graph URL,og:url tag matches canonical,Medium,5,open graph url canonical
+Technical Elements,Twitter Card Type,twitter:card tag present,Medium,5,twitter card type
+Technical Elements,Twitter Title,twitter:title tag present,Medium,5,twitter title
+Technical Elements,Twitter Description,twitter:description tag present,Medium,5,twitter description
+Technical Elements,Twitter Image,twitter:image tag present valid,Medium,5,twitter image
+Technical Elements,Hreflang Tags,Correct hreflang implementation for multi-language,High,8,hreflang multi-language
+Technical Elements,Charset Declaration,UTF-8 charset properly declared,Medium,5,charset utf-8 encoding
+Technical Elements,Viewport Meta,Mobile responsive viewport meta tag,Critical,10,viewport meta responsive
+Technical Elements,Language Attribute,HTML lang attribute specified,Medium,5,html language attribute
+
+Schema Markup,Schema Detection,At least one schema type detected,High,8,schema markup detection
+Schema Markup,JSON-LD Format,JSON-LD is preferred schema format,High,8,json-ld schema format
+Schema Markup,Microdata Format,Microdata itemscope itemprop detected,Medium,5,microdata schema format
+Schema Markup,RDFa Format,RDFa typeof property attributes detected,Medium,5,rdfa schema format
+Schema Markup,Required Properties,All required properties present for schema type,Critical,10,schema required properties
+Schema Markup,Data Type Validation,Property values match expected data types,High,8,schema data type validation
+Schema Markup,Placeholder Text,No placeholder text in schema values,Medium,6,schema placeholder detection
+Schema Markup,URL Format,URLs in schema are valid and discoverable,Medium,6,schema url validation
+Schema Markup,ISO 8601 Dates,Date properties use ISO 8601 format,Medium,5,iso 8601 date format
+Schema Markup,Deprecated Types,No deprecated schema types recommended,High,9,deprecated schema howto faq
+Schema Markup,FAQ Restriction,FAQ schema only for gov health domains,High,9,faq schema restriction
+Schema Markup,Rich Snippet Eligible,Schema markup enables rich snippets,High,8,rich snippets schema
+
+Images,Alt Text Present,All images have alt text,Critical,10,alt text image accessibility
+Images,Alt Text Descriptive,Alt text is descriptive and keyword-relevant,High,8,alt text descriptive keywords
+Images,Alt Text Length,Alt text under 100 characters,Medium,5,alt text length
+Images,File Size Warning,Images under 200KB flagged if larger,High,7,image file size optimization
+Images,File Size Critical,Images under 500KB critical if larger,Critical,10,image file size critical
+Images,Format WebP,WebP AVIF formats preferred over JPEG PNG,Medium,6,webp avif image format
+Images,Dimensions Set,Width height attributes set for CLS prevention,High,9,image dimensions cls
+Images,Lazy Loading,Lazy loading attribute on below-fold images,High,8,lazy loading images
+Images,ImageObject Schema,Important images have ImageObject schema markup,Medium,6,imageobject schema markup
+Images,Broken Image Links,No broken or missing image URLs,High,8,broken image links
+
+Core Web Vitals,LCP Issue Detection,Flag potential LCP problems large hero images,Medium,6,lcp detection optimization
+Core Web Vitals,Render-Blocking Resources,Identify render-blocking scripts styles,High,8,render blocking resources
+Core Web Vitals,INP Issue Detection,Flag heavy JS without async defer,Medium,6,inp javascript optimization
+Core Web Vitals,CLS Prevention,Image dimensions CSS containment prevent cuts,High,8,cls prevention layout shift
+Core Web Vitals,Font Optimization,Web fonts loaded efficiently with font-display,Medium,6,font loading optimization
