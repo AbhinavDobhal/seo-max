@@ -25,6 +25,8 @@ design-system/
 screenshots/*.png
 !screenshots/.gitkeep
 .github/*
+.antigravity/*
+.agent/*
 # IDEs
 .vscode/
 .idea/

@@ -42,7 +42,7 @@ export const INSTALLATION_PATHS: Record<string, string> = {
   cursor: '.cursor/seo-max/ + .cursorrules',
   windsurf: '.windsurf/seo-max/',
   continue: '.continue/skills/seo-max/',
-  antigravity: '.agent/seo-max/',
+  antigravity: '.agent/seo-max/ + .shared/',
   codex: '.codex/skills/seo-max/',
   gemini: '.gemini/skills/seo-max/',
   opencode: '.opencode/skills/seo-max/',

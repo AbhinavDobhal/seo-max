@@ -7,11 +7,11 @@ console.log('✓ Syncing SEO Max assets...');
 
 // Create necessary directories
 const dirs = [
-  '.claude/skills/seo',
-  '.claude/skills/seo/data',
-  '.claude/skills/seo/scripts',
-  '.claude/skills/seo/references',
-  '.claude/skills/seo/templates'
+  '.claude/skills/seo-max',
+  '.claude/skills/seo-max/data',
+  '.claude/skills/seo-max/scripts',
+  '.claude/skills/seo-max/references',
+  '.claude/skills/seo-max/templates'
 ];
 
 dirs.forEach(dir => {
@@ -24,7 +24,7 @@ dirs.forEach(dir => {
 
 // Copy data files
 const srcData = path.join(__dirname, '../src/seo/data');
-const destData = path.join(__dirname, '../.claude/skills/seo/data');
+const destData = path.join(__dirname, '../.claude/skills/seo-max/data');
 
 if (fs.existsSync(srcData)) {
   const files = fs.readdirSync(srcData);
@@ -39,7 +39,7 @@ if (fs.existsSync(srcData)) {
 
 // Copy scripts (skip __pycache__ and .pyc files)
 const srcScripts = path.join(__dirname, '../src/seo/scripts');
-const destScripts = path.join(__dirname, '../.claude/skills/seo/scripts');
+const destScripts = path.join(__dirname, '../.claude/skills/seo-max/scripts');
 
 if (fs.existsSync(srcScripts)) {
   const files = fs.readdirSync(srcScripts).filter(file => 
@@ -58,7 +58,7 @@ if (fs.existsSync(srcScripts)) {
 
 // Copy references
 const srcRef = path.join(__dirname, '../src/seo/references');
-const destRef = path.join(__dirname, '../.claude/skills/seo/references');
+const destRef = path.join(__dirname, '../.claude/skills/seo-max/references');
 
 if (fs.existsSync(srcRef)) {
   const files = fs.readdirSync(srcRef);
@@ -73,7 +73,7 @@ if (fs.existsSync(srcRef)) {
 
 // Copy templates
 const srcTemplates = path.join(__dirname, '../src/seo/templates');
-const destTemplates = path.join(__dirname, '../.claude/skills/seo/templates');
+const destTemplates = path.join(__dirname, '../.claude/skills/seo-max/templates');
 
 if (fs.existsSync(srcTemplates)) {
   const files = fs.readdirSync(srcTemplates);
