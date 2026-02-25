@@ -24,7 +24,7 @@ seo-strategy/
 design-system/
 screenshots/*.png
 !screenshots/.gitkeep
-
+.github/*
 # IDEs
 .vscode/
 .idea/

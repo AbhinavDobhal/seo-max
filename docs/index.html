@@ -8,47 +8,105 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        :root {
+            --primary: #0EA5E9;
+            --secondary: #38BDF8;
+            --cta: #F97316;
+            --bg: #F0F9FF;
+            --text: #0C4A6E;
+            --ink: #082F49;
+            --muted: #64748B;
+            --card: #FFFFFF;
+            --ring: rgba(14, 165, 233, 0.25);
         }
-        h1, h2, h3 {
-            font-family: 'Space Grotesk', sans-serif;
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--ink);
+            background-color: var(--bg);
+        }
+        a, button {
+            cursor: pointer;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+            background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 50%, #0C4A6E 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+        .hero-sheen {
+            background:
+                radial-gradient(1200px 600px at 10% 0%, rgba(14, 165, 233, 0.18), transparent 60%),
+                radial-gradient(900px 500px at 90% 10%, rgba(56, 189, 248, 0.18), transparent 55%),
+                linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 60%);
         }
         .card-hover {
-            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.6s ease;
+        }
+        .card-hover.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
         }
-        .feature-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+        .surface {
+            background: var(--card);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
         }
-        .step-number {
-            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            font-size: 1.25rem;
+        .pill {
+            border: 1px solid rgba(14, 165, 233, 0.35);
+            background: rgba(14, 165, 233, 0.08);
+        }
+        .btn-primary {
+            background: var(--cta);
+            color: #FFF7ED;
+            box-shadow: 0 18px 40px rgba(249, 115, 22, 0.35);
+        }
+        .btn-primary:hover {
+            filter: brightness(0.95);
+        }
+        .btn-secondary {
+            border: 1px solid rgba(14, 165, 233, 0.35);
+            color: var(--ink);
+            background: #FFFFFF;
+        }
+        .progress {
+            height: 3px;
+            background: linear-gradient(90deg, #0EA5E9, #38BDF8, #F97316);
+            width: 0;
+            transition: width 0.1s ease;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .card-hover,
+            .reveal {
+                transition: none !important;
+                transform: none !important;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-sky-50">
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white/90 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
@@ -58,10 +116,11 @@
                     <span class="text-2xl font-bold gradient-text">SEO Max</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
+                    <a href="#product" class="text-slate-700 hover:text-sky-600 transition">Product</a>
                     <a href="#features" class="text-gray-700 hover:text-blue-600 transition">Features</a>
+                    <a href="#proof" class="text-slate-700 hover:text-sky-600 transition">Proof</a>
                     <a href="#platforms" class="text-gray-700 hover:text-blue-600 transition">Platforms</a>
                     <a href="#how-it-works" class="text-gray-700 hover:text-blue-600 transition">How it Works</a>
-                    <a href="#examples" class="text-gray-700 hover:text-blue-600 transition">Examples</a>
                     <a href="https://github.com/abhinavdobhal/seo-max" class="text-gray-700 hover:text-blue-600 transition flex items-center">
                         <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
@@ -71,70 +130,182 @@
                 </div>
             </div>
         </nav>
+        <div id="scroll-progress" class="progress"></div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20 sm:py-32">
+    <section class="relative overflow-hidden hero-sheen py-20 sm:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-                    <span class="gradient-text">SEO Max</span>
-                </h1>
-                <p class="text-xl sm:text-2xl text-gray-700 font-semibold mb-4">AI-Powered SEO Intelligence</p>
-                <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                    Professional SEO analysis, strategy generation, and optimization powered by BM25 search and intelligent reasoning across 15+ coding assistants.
-                </p>
-                
-                <!-- Terminal Demo -->
-                <div class="max-w-2xl mx-auto mb-8 bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
-                    <div class="bg-gray-800 px-4 py-2 flex items-center space-x-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full pill text-sm font-semibold text-sky-800 mb-6">
+                        <span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span>
+                        AI-Powered SEO Intelligence Suite
                     </div>
-                    <div class="p-6 text-left font-mono text-sm">
-                        <div class="text-green-400">$ npm install -g seomax-cli</div>
-                        <div class="text-purple-400 mt-2">$ seomax init --ai claude<span class="animate-pulse">▋</span></div>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        Run SEO like a <span class="gradient-text">founder</span>, not a backlog
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-700 mb-8 max-w-2xl">
+                        SEO Max turns messy SEO requests into ranked actions, clear ROI, and shipping instructions. Built for founders who want growth without hiring a full SEO team.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <a href="#product" class="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold btn-primary transition">
+                            Install SEO Max
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                        <a href="#how-it-works" class="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold btn-secondary transition">
+                            See How It Works
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="surface rounded-xl p-4">
+                            <div class="text-2xl font-bold text-sky-600">500+</div>
+                            <div class="text-sm text-slate-600">SEO rules mapped</div>
+                        </div>
+                        <div class="surface rounded-xl p-4">
+                            <div class="text-2xl font-bold text-sky-600">50+</div>
+                            <div class="text-sm text-slate-600">Schema templates</div>
+                        </div>
+                        <div class="surface rounded-xl p-4">
+                            <div class="text-2xl font-bold text-sky-600">15+</div>
+                            <div class="text-sm text-slate-600">Assistant platforms</div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
-                    <a href="#how-it-works" class="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl">
-                        How it Works
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                        </svg>
-                    </a>
-                    <a href="#examples" class="inline-flex items-center px-8 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition shadow-lg hover:shadow-xl">
-                        View Examples
-                    </a>
+                <div class="surface rounded-2xl p-6 relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <p class="text-sm text-slate-500">Live Strategy Snapshot</p>
+                            <h3 class="text-2xl font-bold text-slate-900">SaaS Landing Page</h3>
+                        </div>
+                        <span class="text-xs font-semibold uppercase tracking-wide text-sky-700 pill px-3 py-1 rounded-full">Chapter 3</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="surface rounded-xl p-4 border border-slate-100">
+                            <p class="text-xs font-semibold text-slate-400 uppercase">Top Fixes</p>
+                            <p class="text-sm text-slate-700">Ship INP improvements, compress hero media, add Product schema.</p>
+                        </div>
+                        <div class="surface rounded-xl p-4 border border-slate-100">
+                            <p class="text-xs font-semibold text-slate-400 uppercase">Opportunity</p>
+                            <p class="text-sm text-slate-700">Add FAQ + HowTo schema for conversion keywords in AI search.</p>
+                        </div>
+                        <div class="surface rounded-xl p-4 border border-slate-100">
+                            <p class="text-xs font-semibold text-slate-400 uppercase">Expected Impact</p>
+                            <p class="text-sm text-slate-700">Lift organic CTR by 18-32% with rich results + speed gains.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-slate-900 rounded-xl p-4 text-xs font-mono text-slate-100">
+                        <div class="text-sky-300">$ seomax init --ai claude</div>
+                        <div class="text-slate-300 mt-2">$ /seo audit example.com --priority</div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
-                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
-                        <div class="text-3xl font-bold text-blue-600">500+</div>
-                        <div class="text-sm text-gray-600">SEO Rules</div>
+    <!-- Proof Section -->
+    <section id="proof" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sm font-semibold text-sky-600 mb-3">Social Proof</p>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">Founders ship faster with ranked SEO decisions</h2>
+                <p class="text-lg text-slate-600">Built for operators who need clarity without hiring a full-time SEO team.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+                <div class="surface rounded-xl p-4 text-center text-sm font-semibold text-slate-600">Northwind</div>
+                <div class="surface rounded-xl p-4 text-center text-sm font-semibold text-slate-600">Pulse</div>
+                <div class="surface rounded-xl p-4 text-center text-sm font-semibold text-slate-600">Summit</div>
+                <div class="surface rounded-xl p-4 text-center text-sm font-semibold text-slate-600">Orbit</div>
+                <div class="surface rounded-xl p-4 text-center text-sm font-semibold text-slate-600">Slate</div>
+                <div class="surface rounded-xl p-4 text-center text-sm font-semibold text-slate-600">Crescent</div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="flex items-center gap-1 text-sky-500 mb-4">
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
-                        <div class="text-3xl font-bold text-purple-600">50+</div>
-                        <div class="text-sm text-gray-600">Schema Types</div>
+                    <p class="text-slate-700 text-sm">"We finally know what to ship first. SEO Max turned chaos into a 2-week action plan."</p>
+                    <p class="text-xs text-slate-500 mt-4">Founder, B2B SaaS</p>
+                </div>
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="flex items-center gap-1 text-sky-500 mb-4">
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
-                        <div class="text-3xl font-bold text-pink-600">15+</div>
-                        <div class="text-sm text-gray-600">Platforms</div>
+                    <p class="text-slate-700 text-sm">"We stopped guessing. The ranked checklist told us exactly what moved the needle."</p>
+                    <p class="text-xs text-slate-500 mt-4">Operator, Marketplace</p>
+                </div>
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="flex items-center gap-1 text-sky-500 mb-4">
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.363 2.444a1 1 0 00-.364 1.118l1.286 3.955c.3.921-.755 1.688-1.538 1.118l-3.363-2.444a1 1 0 00-1.176 0l-3.363 2.444c-.783.57-1.838-.197-1.538-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.98 9.382c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.955z"/></svg>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
-                        <div class="text-3xl font-bold text-indigo-600">20+</div>
-                        <div class="text-sm text-gray-600">Industries</div>
+                    <p class="text-slate-700 text-sm">"It replaced expensive audits. We shipped schema + speed fixes in a weekend."</p>
+                    <p class="text-xs text-slate-500 mt-4">Founder, Ecommerce</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section id="product" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[1fr,1.05fr] gap-12 items-start">
+                <div>
+                    <p class="text-sm font-semibold text-sky-600 mb-3">Product Detail</p>
+                    <h2 class="text-4xl sm:text-5xl font-bold mb-6">A founder-grade SEO system that ships fast</h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        SEO Max combines a ranked knowledge base with a decision engine so you know what to ship first, what to ignore, and how each action ties back to growth.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="surface rounded-xl p-5">
+                            <h3 class="text-lg font-semibold mb-2">5 domains, one ranked plan</h3>
+                            <p class="text-sm text-slate-600">Technical, content, schema, industry, and GEO signals run together so you see the highest leverage moves first.</p>
+                        </div>
+                        <div class="surface rounded-xl p-5">
+                            <h3 class="text-lg font-semibold mb-2">BM25 impact scoring</h3>
+                            <p class="text-sm text-slate-600">Know what moves rankings now versus what can wait. Every suggestion includes urgency and impact.</p>
+                        </div>
+                        <div class="surface rounded-xl p-5">
+                            <h3 class="text-lg font-semibold mb-2">Strategy persistence</h3>
+                            <p class="text-sm text-slate-600">Save a master SEO playbook and page-level overrides so your team stays aligned.</p>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
-                        <div class="text-3xl font-bold text-cyan-600">100+</div>
-                        <div class="text-sm text-gray-600">Tech Checks</div>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="surface rounded-2xl p-6 card-hover">
+                        <p class="text-xs font-semibold uppercase text-slate-400">Data Library</p>
+                        <h3 class="text-2xl font-bold mt-2">500+ Rules</h3>
+                        <p class="text-sm text-slate-600 mt-2">Technical SEO, E-E-A-T, schema, and industry templates pre-mapped.</p>
                     </div>
-                    <div class="bg-white rounded-lg p-4 shadow-md card-hover">
-                        <div class="text-3xl font-bold text-rose-600">5</div>
-                        <div class="text-sm text-gray-600">Search Domains</div>
+                    <div class="surface rounded-2xl p-6 card-hover">
+                        <p class="text-xs font-semibold uppercase text-slate-400">Schema Studio</p>
+                        <h3 class="text-2xl font-bold mt-2">50+ Types</h3>
+                        <p class="text-sm text-slate-600 mt-2">JSON-LD generation + validation with rich result compatibility checks.</p>
+                    </div>
+                    <div class="surface rounded-2xl p-6 card-hover">
+                        <p class="text-xs font-semibold uppercase text-slate-400">GEO Signals</p>
+                        <h3 class="text-2xl font-bold mt-2">AI Search Ready</h3>
+                        <p class="text-sm text-slate-600 mt-2">Optimized for SGE, voice queries, and generative SERP layouts.</p>
+                    </div>
+                    <div class="surface rounded-2xl p-6 card-hover">
+                        <p class="text-xs font-semibold uppercase text-slate-400">Workflow</p>
+                        <h3 class="text-2xl font-bold mt-2">6-Step System</h3>
+                        <p class="text-sm text-slate-600 mt-2">From prompt to validated playbook with checkpoints baked in.</p>
                     </div>
                 </div>
             </div>
@@ -145,103 +316,104 @@
     <section id="features" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4">Everything You Need for SEO Excellence</h2>
-                <p class="text-xl text-gray-600">Comprehensive SEO intelligence at your fingertips</p>
+                <p class="text-sm font-semibold text-sky-600 mb-3">Capability Stack</p>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">Everything you need to win modern search</h2>
+                <p class="text-lg text-slate-600">Structured intelligence across technical SEO, content quality, schema, and AI search.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Technical SEO -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Technical SEO</h3>
-                    <p class="text-gray-700 mb-4">Core Web Vitals, crawlability, indexability, mobile-first optimization with 100+ rule checks.</p>
+                    <p class="text-slate-600 mb-4">Core Web Vitals, crawlability, indexability, and mobile-first checks prioritized by impact.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm">INP</span>
-                        <span class="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm">LCP</span>
-                        <span class="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm">CLS</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">INP</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">LCP</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">CLS</span>
                     </div>
                 </div>
 
                 <!-- Content Analysis -->
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Content Analysis</h3>
-                    <p class="text-gray-700 mb-4">E-E-A-T framework (Dec 2025 update), keyword optimization, and content quality assessment.</p>
+                    <p class="text-slate-600 mb-4">E-E-A-T scoring, topical coverage, and content gaps for authority-driven growth.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm">Experience</span>
-                        <span class="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm">Expertise</span>
-                        <span class="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm">Authority</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Experience</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Expertise</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Authority</span>
                     </div>
                 </div>
 
                 <!-- Schema Markup -->
-                <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center mb-4">
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Schema Markup</h3>
-                    <p class="text-gray-700 mb-4">50+ schema types, validation, generation, and deprecation awareness for rich results.</p>
+                    <p class="text-slate-600 mb-4">Generate JSON-LD schema, validate, and monitor deprecations for rich results.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-pink-200 text-pink-800 rounded-full text-sm">Product</span>
-                        <span class="px-3 py-1 bg-pink-200 text-pink-800 rounded-full text-sm">Article</span>
-                        <span class="px-3 py-1 bg-pink-200 text-pink-800 rounded-full text-sm">LocalBusiness</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Product</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Article</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">LocalBusiness</span>
                     </div>
                 </div>
 
                 <!-- GEO Optimization -->
-                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">GEO Optimization</h3>
-                    <p class="text-gray-700 mb-4">AI search optimization, SERP features, voice search, and Google SGE recommendations.</p>
+                    <p class="text-slate-600 mb-4">Optimize for AI search, voice queries, and next-gen SERP layouts.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 rounded-full text-sm">AI Search</span>
-                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 rounded-full text-sm">Featured Snippets</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">AI Search</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Featured Snippets</span>
                     </div>
                 </div>
 
                 <!-- Industry Templates -->
-                <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Industry Templates</h3>
-                    <p class="text-gray-700 mb-4">Pre-configured SEO strategies for SaaS, E-commerce, Local Services, Publisher, and more.</p>
+                    <p class="text-slate-600 mb-4">Industry templates for SaaS, e-commerce, local services, publishers, and agencies.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-cyan-200 text-cyan-800 rounded-full text-sm">SaaS</span>
-                        <span class="px-3 py-1 bg-cyan-200 text-cyan-800 rounded-full text-sm">E-commerce</span>
-                        <span class="px-3 py-1 bg-cyan-200 text-cyan-800 rounded-full text-sm">Local</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">SaaS</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">E-commerce</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Local</span>
                     </div>
                 </div>
 
                 <!-- BM25 Search -->
-                <div class="bg-gradient-to-br from-rose-50 to-rose-100 rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 bg-rose-600 rounded-lg flex items-center justify-center mb-4">
+                <div class="surface rounded-2xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">BM25 Search Engine</h3>
-                    <p class="text-gray-700 mb-4">Algorithmic ranking across 500+ SEO rules with intelligent relevance scoring.</p>
+                    <p class="text-slate-600 mb-4">BM25 ranking highlights the highest-impact actions for each request.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-rose-200 text-rose-800 rounded-full text-sm">Fast</span>
-                        <span class="px-3 py-1 bg-rose-200 text-rose-800 rounded-full text-sm">Accurate</span>
-                        <span class="px-3 py-1 bg-rose-200 text-rose-800 rounded-full text-sm">Smart</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Fast</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Accurate</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold text-sky-700 pill">Smart</span>
                     </div>
                 </div>
             </div>
@@ -249,11 +421,12 @@
     </section>
 
     <!-- Platforms Section -->
-    <section id="platforms" class="py-20 bg-gray-50">
+    <section id="platforms" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4">15+ Platforms Supported</h2>
-                <p class="text-xl text-gray-600">Works seamlessly with your favorite AI coding assistant</p>
+                <p class="text-sm font-semibold text-sky-600 mb-3">Integrations</p>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">15+ platforms supported</h2>
+                <p class="text-lg text-slate-600">Activate SEO Max inside the assistants your team already uses.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
@@ -420,13 +593,14 @@
     <section id="how-it-works" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4">How It Works</h2>
-                <p class="text-xl text-gray-600">From request to production-ready SEO strategy in 6 intelligent steps</p>
+                <p class="text-sm font-semibold text-sky-600 mb-3">Workflow</p>
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4">From prompt to prioritized SEO delivery</h2>
+                <p class="text-lg text-slate-600">Six guided steps with validation checkpoints and impact scoring.</p>
             </div>
 
             <div class="space-y-12">
                 <!-- Step 1 -->
-                <div class="flex flex-col md:flex-row items-start gap-8">
+                <div class="flex flex-col md:flex-row items-start gap-8 reveal">
                     <div class="flex-shrink-0">
                         <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">1</div>
                     </div>
@@ -444,7 +618,7 @@
                 </div>
 
                 <!-- Step 2 -->
-                <div class="flex flex-col md:flex-row items-start gap-8">
+                <div class="flex flex-col md:flex-row items-start gap-8 reveal">
                     <div class="flex-shrink-0">
                         <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">2</div>
                     </div>
@@ -467,7 +641,7 @@
                 </div>
 
                 <!-- Step 3 -->
-                <div class="flex flex-col md:flex-row items-start gap-8">
+                <div class="flex flex-col md:flex-row items-start gap-8 reveal">
                     <div class="flex-shrink-0">
                         <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">3</div>
                     </div>
@@ -502,7 +676,7 @@
                 </div>
 
                 <!-- Step 4 -->
-                <div class="flex flex-col md:flex-row items-start gap-8">
+                <div class="flex flex-col md:flex-row items-start gap-8 reveal">
                     <div class="flex-shrink-0">
                         <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">4</div>
                     </div>
@@ -526,7 +700,7 @@
                 </div>
 
                 <!-- Step 5 -->
-                <div class="flex flex-col md:flex-row items-start gap-8">
+                <div class="flex flex-col md:flex-row items-start gap-8 reveal">
                     <div class="flex-shrink-0">
                         <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">5</div>
                     </div>
@@ -569,7 +743,7 @@
                 </div>
 
                 <!-- Step 6 -->
-                <div class="flex flex-col md:flex-row items-start gap-8">
+                <div class="flex flex-col md:flex-row items-start gap-8 reveal">
                     <div class="flex-shrink-0">
                         <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-green-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">6</div>
                     </div>
@@ -598,238 +772,22 @@
         </div>
     </section>
 
-    <!-- Examples/Gallery Section -->
-    <section id="examples" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4">Real-World Examples</h2>
-                <p class="text-xl text-gray-600">See SEO Max in action across different industries</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- SaaS Example -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-6 text-white">
-                        <h3 class="text-xl font-bold mb-2">SaaS Analytics Platform</h3>
-                        <p class="text-blue-100 text-sm">B2B SaaS • Technical SEO Focus</p>
-                    </div>
-                    <div class="p-6">
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Optimized Core Web Vitals (LCP 1.8s)</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>SoftwareApplication schema markup</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>E-E-A-T signals for authority</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>AI search optimized content</span>
-                            </div>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200">
-                            <div class="text-xs text-gray-500 mb-2">Result:</div>
-                            <div class="text-2xl font-bold text-blue-600">+185%</div>
-                            <div class="text-sm text-gray-600">Organic traffic increase</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- E-commerce Example -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-6 text-white">
-                        <h3 class="text-xl font-bold mb-2">Fashion E-commerce Store</h3>
-                        <p class="text-purple-100 text-sm">E-commerce • Product Schema Focus</p>
-                    </div>
-                    <div class="p-6">
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Product schema with reviews</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Breadcrumb markup implemented</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Image optimization (WebP format)</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Rich snippets for pricing</span>
-                            </div>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200">
-                            <div class="text-xs text-gray-500 mb-2">Result:</div>
-                            <div class="text-2xl font-bold text-purple-600">+240%</div>
-                            <div class="text-sm text-gray-600">Rich result appearances</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Local Business Example -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <div class="bg-gradient-to-br from-pink-500 to-pink-600 p-6 text-white">
-                        <h3 class="text-xl font-bold mb-2">Local Coffee Shop Chain</h3>
-                        <p class="text-pink-100 text-sm">Local Business • Multi-location SEO</p>
-                    </div>
-                    <div class="p-6">
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>LocalBusiness schema per location</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Google Business Profile optimization</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>NAP consistency across 15 locations</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Local keyword targeting strategy</span>
-                            </div>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200">
-                            <div class="text-xs text-gray-500 mb-2">Result:</div>
-                            <div class="text-2xl font-bold text-pink-600">+320%</div>
-                            <div class="text-sm text-gray-600">Local pack visibility</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Publisher Example -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <div class="bg-gradient-to-br from-indigo-500 to-indigo-600 p-6 text-white">
-                        <h3 class="text-xl font-bold mb-2">Tech News Publisher</h3>
-                        <p class="text-indigo-100 text-sm">Publisher • Content Quality Focus</p>
-                    </div>
-                    <div class="p-6">
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Article schema with author info</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>E-E-A-T optimization for journalists</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Top Stories eligibility achieved</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Featured snippet optimization</span>
-                            </div>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200">
-                            <div class="text-xs text-gray-500 mb-2">Result:</div>
-                            <div class="text-2xl font-bold text-indigo-600">+410%</div>
-                            <div class="text-sm text-gray-600">News carousel appearances</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Healthcare Example -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 p-6 text-white">
-                        <h3 class="text-xl font-bold mb-2">Telemedicine Platform</h3>
-                        <p class="text-cyan-100 text-sm">Healthcare • YMYL Compliance</p>
-                    </div>
-                    <div class="p-6">
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Medical professional credentials</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>YMYL content quality standards</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Healthcare-specific schema markup</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Trust signals and certifications</span>
-                            </div>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200">
-                            <div class="text-xs text-gray-500 mb-2">Result:</div>
-                            <div class="text-2xl font-bold text-cyan-600">+165%</div>
-                            <div class="text-sm text-gray-600">Qualified patient inquiries</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Agency Example -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-                    <div class="bg-gradient-to-br from-rose-500 to-rose-600 p-6 text-white">
-                        <h3 class="text-xl font-bold mb-2">Digital Marketing Agency</h3>
-                        <p class="text-rose-100 text-sm">Agency • Authority Building</p>
-                    </div>
-                    <div class="p-6">
-                        <div class="space-y-3 text-sm">
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Service area schema markup</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Team member structured data</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Case study content optimization</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="text-green-600 mr-2">✓</span>
-                                <span>Thought leadership E-E-A-T signals</span>
-                            </div>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200">
-                            <div class="text-xs text-gray-500 mb-2">Result:</div>
-                            <div class="text-2xl font-bold text-rose-600">+290%</div>
-                            <div class="text-sm text-gray-600">High-intent lead generation</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <div class="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold">
-                    <span class="text-2xl font-bold mr-2">20+</span>
-                    <span>Industries Supported • Custom Strategies for Each</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+    <section class="py-20 bg-gradient-to-br from-sky-600 via-sky-500 to-blue-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h2 class="text-4xl sm:text-5xl font-bold mb-6">Ready to Optimize Your SEO?</h2>
-            <p class="text-xl mb-8 opacity-90">Get started with SEO Max for your AI coding assistant. Professional SEO intelligence at your fingertips.</p>
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6">Install SEO Max and ship your next SEO sprint</h2>
+            <p class="text-lg mb-8 opacity-90">Get ranked recommendations, schema output, and clear next steps in minutes.</p>
             
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
-                <a href="https://github.com/abhinavdobhal/seo-max" class="inline-flex items-center px-8 py-4 bg-white text-purple-600 rounded-lg font-semibold hover:bg-gray-100 transition shadow-xl hover:shadow-2xl text-lg">
+                <a href="https://github.com/abhinavdobhal/seo-max" class="inline-flex items-center px-8 py-4 bg-white text-sky-700 rounded-lg font-semibold hover:bg-slate-50 transition shadow-xl hover:shadow-2xl text-lg">
                     <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                         <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
                     </svg>
-                    Get on GitHub
+                    Install SEO Max
                 </a>
-                <a href="#features" class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition shadow-xl hover:shadow-2xl text-lg">
-                    Learn More
+                <a href="#product" class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-sky-700 transition shadow-xl hover:shadow-2xl text-lg">
+                    Review Product Detail
                 </a>
             </div>
 
@@ -873,10 +831,11 @@
                 <div>
                     <h3 class="font-semibold text-white mb-4">Resources</h3>
                     <ul class="space-y-2 text-sm">
+                        <li><a href="#product" class="hover:text-blue-400 transition">Product Detail</a></li>
                         <li><a href="#features" class="hover:text-blue-400 transition">Features</a></li>
+                        <li><a href="#proof" class="hover:text-blue-400 transition">Social Proof</a></li>
                         <li><a href="#platforms" class="hover:text-blue-400 transition">Supported Platforms</a></li>
                         <li><a href="#how-it-works" class="hover:text-blue-400 transition">How It Works</a></li>
-                        <li><a href="#examples" class="hover:text-blue-400 transition">Examples</a></li>
                     </ul>
                 </div>
 
@@ -921,6 +880,19 @@
     </footer>
 
     <script>
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const progressBar = document.getElementById('scroll-progress');
+
+        const updateProgress = () => {
+            if (!progressBar) return;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+            progressBar.style.width = `${progress}%`;
+        };
+
+        window.addEventListener('scroll', updateProgress);
+        updateProgress();
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -928,34 +900,28 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth',
                         block: 'start'
                     });
                 }
             });
         });
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        const revealTargets = document.querySelectorAll('.reveal, .card-hover');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+        if (prefersReducedMotion) {
+            revealTargets.forEach(target => target.classList.add('is-visible'));
+        } else {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.card-hover').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s ease-out';
-            observer.observe(card);
-        });
+            revealTargets.forEach(target => observer.observe(target));
+        }
     </script>
 </body>
 </html>
