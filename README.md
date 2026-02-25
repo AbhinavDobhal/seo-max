@@ -234,7 +234,7 @@ Analyze SEO for example.com
 Use the slash command to invoke the skill:
 
 ```
-/seo audit example.com
+/seo-max explore example.com
 ```
 
 ### Example Prompts
