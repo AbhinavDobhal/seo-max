@@ -24,7 +24,21 @@
   "bugs": {
     "url": "https://github.com/abhinavdobhal/seo-max/issues"
   },
-  "private": true,
+  "private": false,
+  "main": "cli/dist/index.js",
+  "types": "cli/dist/index.d.ts",
+  "bin": {
+    "seo-max": "cli/dist/cli.js"
+  },
+  "files": [
+    "cli/dist",
+    "src/seo/data",
+    "src/seo/scripts",
+    "src/seo/templates",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "workspaces": [
     "cli"
   ],
@@ -46,5 +60,19 @@
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "preferGlobal": false,
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
 }

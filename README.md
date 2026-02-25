@@ -32,7 +32,7 @@
 - ✅ Technical SEO (Core Web Vitals, crawlability, indexability)
 - ✅ Content Quality (E-E-A-T signals, keyword optimization)
 - ✅ Schema Markup (validation, generation, recommendations)
-- ✅ GEO Optimization (AI search, SERP features)
+- ✅ AI Search Insights (search visibility, platform signals)
 - ✅ Industry Templates (SaaS, E-commerce, Local, etc.)
 
 ### How It Works
