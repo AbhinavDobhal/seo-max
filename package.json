@@ -28,13 +28,12 @@
   "main": "cli/dist/index.js",
   "types": "cli/dist/index.d.ts",
   "bin": {
-    "seo-max": "cli/dist/cli.js"
+    "seo-max": "cli/dist/cli.js",
+    "seomax": "cli/dist/cli.js"
   },
   "files": [
     "cli/dist",
-    "src/seo/data",
-    "src/seo/scripts",
-    "src/seo/templates",
+    "cli/assets",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
@@ -44,18 +43,20 @@
   ],
   "scripts": {
     "build": "cd cli && npm run build",
-    "dev:claude": "npm run sync && cp -r .claude/skills/seo ~/.claude/skills/",
-    "dev:cursor": "npm run sync && cp -r .claude/skills/seo ~/.cursor/rules/",
-    "dev:copilot": "npm run sync && mkdir -p ~/.copilot/skills && cp -r .claude/skills/seo ~/.copilot/skills/",
-    "dev:windsurf": "npm run sync && cp -r .claude/skills/seo ~/.windsurf/skills/",
-    "dev:continue": "npm run sync && cp -r .claude/skills/seo ~/.continue/skills/",
+    "prepare-assets": "node cli/scripts/prepare-assets.js",
+    "prepublishOnly": "npm run prepare-assets",
+    "dev:claude": "cp -r .claude/skills/seo-max ~/.claude/skills/",
+    "dev:cursor": "cp -r .claude/skills/seo-max ~/.cursor/",
+    "dev:copilot": "mkdir -p .github && cp .claude/skills/seo-max/SKILL.md .github/copilot-instructions.md",
+    "dev:windsurf": "cp -r .claude/skills/seo-max ~/.windsurf/",
+    "dev:continue": "cp -r .claude/skills/seo-max ~/.continue/skills/",
     "dev:all": "npm run dev:claude && npm run dev:cursor && npm run dev:copilot && npm run dev:windsurf && npm run dev:continue",
     "sync": "node scripts/sync-assets.js",
     "test": "python3 -m pytest tests/",
     "lint:py": "python3 -m pylint src/seo/scripts/*.py",
     "lint:ts": "cd cli && npm run lint",
-    "clean": "rm -rf cli/dist cli/assets .claude/skills/seo",
-    "prepare": "npm run sync"
+    "clean": "rm -rf cli/dist cli/assets",
+    "prepare": "npm run prepare-assets"
   },
   "engines": {
     "node": ">=18.0.0",

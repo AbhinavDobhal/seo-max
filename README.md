@@ -93,33 +93,35 @@
 # Install CLI globally
 npm install -g seo-max
 
-# Go to your project
-cd /path/to/your/project
-
-# Install for your AI assistant
-seomax init --ai claude      # Claude Code
-seomax init --ai cursor      # Cursor
-seomax init --ai windsurf    # Windsurf
-seomax init --ai copilot     # GitHub Copilot
-seomax init --ai continue    # Continue
-seomax init --ai antigravity # Antigravity
-seomax init --ai kiro        # Kiro
-seomax init --ai codex       # Codex CLI
-seomax init --ai roocode     # Roo Code
-seomax init --ai gemini      # Gemini CLI
-seomax init --ai trae        # Trae
-seomax init --ai qoder       # Qoder
-seomax init --ai codebuddy   # CodeBuddy
-seomax init --ai droid       # Droid (Factory)
-seomax init --ai all         # All assistants
+# Initialize for your AI assistant (automatically sets up Python environment)
+seo-max init --ai claude      # Claude Code
+seo-max init --ai cursor      # Cursor
+seo-max init --ai windsurf    # Windsurf
+seo-max init --ai copilot     # GitHub Copilot
+seo-max init --ai continue    # Continue
+seo-max init --ai antigravity # Antigravity
+seo-max init --ai kiro        # Kiro
+seo-max init --ai codex       # Codex CLI
+seo-max init --ai roocode     # Roo Code
+seo-max init --ai gemini      # Gemini CLI
+seo-max init --ai trae        # Trae
+seo-max init --ai qoder       # Qoder
+seo-max init --ai codebuddy   # CodeBuddy
+seo-max init --ai droid       # Droid (Factory)
+seo-max init --ai all         # All assistants
 ```
+
+**What `seo-max init` does:**
+1. ✅ Copies all skill files to the AI assistant's folder
+2. ✅ Creates Python virtual environment (`.venv`)
+3. ✅ Installs all dependencies from `requirements.txt`
+4. ✅ Makes everything ready to use immediately
 
 ### Other CLI Commands
 
 ```bash
-seomax versions              # List available versions
-seomax update                # Update to latest version
-seomax init --offline        # Skip GitHub download, use bundled assets
+seo-max --version             # Show version number
+seo-max --help                # Show help information
 ```
 
 ---
@@ -140,6 +142,75 @@ sudo apt update && sudo apt install python3
 
 # Windows
 winget install Python.Python.3.12
+```
+
+### Setting Up Python Environment
+
+**The `seo-max init` command automatically handles Python setup!**
+
+If you installed using `seo-max init --ai <platform>`, Python environment is already configured. Skip to [Running SEO Analyzers](#running-seo-analyzers).
+
+#### Manual Setup (if needed)
+
+If you prefer manual setup or need to reconfigure:
+
+```bash
+# Navigate to skills folder
+cd ~/.claude/skills/seo-max  # macOS/Linux
+cd %USERPROFILE%\.claude\skills\seo-max  # Windows
+
+# Run the automated setup script
+./setup.sh  # macOS/Linux
+setup.bat   # Windows
+```
+
+**Or completely manual:**
+
+```bash
+# Navigate to skills folder
+cd ~/.claude/skills/seo-max  # macOS/Linux
+cd %USERPROFILE%\.claude\skills\seo-max  # Windows
+
+# Create virtual environment
+python3 -m venv .venv
+
+# Activate virtual environment
+source .venv/bin/activate  # macOS/Linux
+.venv\Scripts\activate  # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Running SEO Analyzers
+
+After running the setup, you can execute the five core analyzers:
+
+```bash
+# Navigate to skills folder
+cd ~/.claude/skills/seo-max
+
+# Activate virtual environment (if not already active)
+source .venv/bin/activate  # macOS/Linux
+.venv\Scripts\activate  # Windows
+
+# Run analyzers
+python3 scripts/page_analyzer.py https://example.com
+python3 scripts/schema_validator.py https://example.com
+python3 scripts/insights_optimizer.py https://example.com
+python3 scripts/sitemap.py https://example.com/sitemap.xml
+python3 scripts/site_crawler.py https://example.com
+```
+
+**Example Output:**
+```
+All five analyzers have been initialized for example.com:
+
+✅ page_analyzer.py - Page-level SEO analysis complete
+✅ schema_validator.py - Schema markup validation complete
+✅ insights_optimizer.py - AI optimization insights complete
+✅ sitemap.py - Sitemap analysis complete
+✅ site_crawler.py - Site crawl complete
 ```
 
 ---
