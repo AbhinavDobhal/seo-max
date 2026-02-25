@@ -313,7 +313,7 @@ seo-max@2.0.0 | MIT | deps: none
 AI-powered SEO intelligence for 15+ coding assistants
 
 Repository: https://github.com/abhinavdobhal/seo-max.git
-Homepage: https://seomax.cc
+Homepage: https://abhinavdobhal.github.io/seo-max/
 Bugs: https://github.com/abhinavdobhal/seo-max/issues
 
 dist
