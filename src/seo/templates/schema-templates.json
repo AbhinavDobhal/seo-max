@@ -1,0 +1,158 @@
+{
+  "schema_types": {
+    "BlogPosting": {
+      "type": "BlogPosting",
+      "status": "active",
+      "example": {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Article Title",
+        "image": "https://example.com/image.jpg",
+        "datePublished": "2024-01-01T00:00:00Z",
+        "dateModified": "2024-01-01T00:00:00Z",
+        "author": {
+          "@type": "Person",
+          "name": "Author Name",
+          "url": "https://example.com"
+        },
+        "description": "Article summary",
+        "articleBody": "Full article content..."
+      }
+    },
+    "Product": {
+      "type": "Product",
+      "status": "active",
+      "example": {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Product Name",
+        "description": "Product description",
+        "image": "https://example.com/image.jpg",
+        "brand": {"@type": "Brand", "name": "Brand Name"},
+        "offers": {
+          "@type": "Offer",
+          "price": "99.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.5",
+          "reviewCount": "250"
+        }
+      }
+    },
+    "FAQPage": {
+      "type": "FAQPage",
+      "status": "restricted",
+      "example": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Question text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Answer text here."
+            }
+          }
+        ]
+      }
+    },
+    "Organization": {
+      "type": "Organization",
+      "status": "active",
+      "example": {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Company Name",
+        "url": "https://example.com",
+        "logo": "https://example.com/logo.png",
+        "description": "Company description",
+        "sameAs": [
+          "https://twitter.com/company",
+          "https://facebook.com/company"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-XXX-XXX-XXXX",
+          "contactType": "Customer Support"
+        }
+      }
+    },
+    "LocalBusiness": {
+      "type": "LocalBusiness",
+      "status": "active",
+      "example": {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Business Name",
+        "image": "https://example.com/image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Main St",
+          "addressLocality": "City",
+          "addressRegion": "State",
+          "postalCode": "12345"
+        },
+        "telephone": "+1-XXX-XXX-XXXX",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      }
+    },
+    "Article": {
+      "type": "Article",
+      "status": "active",
+      "example": {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Article Title",
+        "description": "Article description",
+        "image": "https://example.com/image.jpg",
+        "datePublished": "2024-01-01T00:00:00Z",
+        "author": {
+          "@type": "Person",
+          "name": "Author Name"
+        }
+      }
+    },
+    "NewsArticle": {
+      "type": "NewsArticle",
+      "status": "active",
+      "example": {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "News Headline",
+        "image": ["https://example.com/image.jpg"],
+        "datePublished": "2024-01-01T00:00:00Z",
+        "dateModified": "2024-01-01T00:00:00Z",
+        "author": {
+          "@type": "Person",
+          "name": "Author Name"
+        }
+      }
+    }
+  },
+  "open_graph": {
+    "blog": {
+      "og:title": "Article Title",
+      "og:description": "Article summary (160 chars max)",
+      "og:image": "https://example.com/image.jpg",
+      "og:type": "article",
+      "og:url": "https://example.com/article"
+    },
+    "product": {
+      "og:title": "Product Name",
+      "og:description": "Product description",
+      "og:image": "https://example.com/image.jpg",
+      "og:type": "product",
+      "og:price:amount": "99.99",
+      "og:price:currency": "USD"
+    }
+  }
+}
